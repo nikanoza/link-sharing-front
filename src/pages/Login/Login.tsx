@@ -2,6 +2,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { Email, LogoText, Password } from "../../svg";
 import { LoginType } from "../../types";
 import { Button, Input } from "../../components";
+import { Link } from "@tanstack/react-router";
 
 const Login = () => {
   const {
@@ -14,7 +15,7 @@ const Login = () => {
     console.log(data);
   };
   return (
-    <main className="w-full h-full bg-light-grey p-8">
+    <main className="w-full h-full bg-light-grey p-8 flex flex-col">
       <LogoText />
       <h1 className="text-2xl text-dark-grey font-bold mt-[72px]">Login</h1>
       <h3 className="text-grey text-base font-normal mt-2">
@@ -41,8 +42,17 @@ const Login = () => {
           icon={<Password className="absolute top-4 left-4" />}
           error={errors.password}
         />
+        <Button type="submit" text="Login" className="mt-3" />
       </form>
-      <Button type="submit" text="Login" className="mt-3" />
+      <h3 className="text-center text-base text-grey font-normal mt-6">
+        Don’t have an account?
+      </h3>
+      <Link
+        to="/register"
+        className="text-center text-base text-electric font-normal mx-auto"
+      >
+        Create account
+      </Link>
     </main>
   );
 };

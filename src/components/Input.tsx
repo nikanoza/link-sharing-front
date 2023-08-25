@@ -17,7 +17,7 @@ const Input: React.FC<PropsType> = ({
   error,
 }) => {
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full relative">
       <input
         {...register(label)}
         className="w-full h-12 border border-solid border-borders rounded-lg py-3 pl-12 pr-4"
