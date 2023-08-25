@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        "light-grey": "#FAFAFA"
+        "light-grey": "#FAFAFA",
+        "dark-grey": "#333",
+        grey: "#737373"
       }
     },
   },
