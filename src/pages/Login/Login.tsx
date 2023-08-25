@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { LogoText } from "../../svg";
+import { Email, LogoText } from "../../svg";
 import { LoginType } from "../../types";
+import { Input } from "../../components";
 
 const Login = () => {
   const {
@@ -23,6 +24,13 @@ const Login = () => {
         <label className="text-xs text-dark-grey font-normal">
           Email address
         </label>
+        <Input
+          register={register}
+          label="email"
+          placeholder="e.g. alex@email.com"
+          icon={<Email className="absolute top-4 left-4" />}
+          error={errors.email}
+        />
       </form>
     </main>
   );

@@ -9,7 +9,8 @@ export default {
       colors: {
         "light-grey": "#FAFAFA",
         "dark-grey": "#333",
-        grey: "#737373"
+        grey: "#737373",
+        borders: "#D9D9D9"
       }
     },
   },
