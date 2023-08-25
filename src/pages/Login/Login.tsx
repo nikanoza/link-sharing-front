@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Email, LogoText } from "../../svg";
+import { Email, LogoText, Password } from "../../svg";
 import { LoginType } from "../../types";
-import { Input } from "../../components";
+import { Button, Input } from "../../components";
 
 const Login = () => {
   const {
@@ -31,7 +31,18 @@ const Login = () => {
           icon={<Email className="absolute top-4 left-4" />}
           error={errors.email}
         />
+        <label className="text-xs text-dark-grey font-normal mt-3">
+          Password
+        </label>
+        <Input
+          register={register}
+          label="password"
+          placeholder="Enter your password"
+          icon={<Password className="absolute top-4 left-4" />}
+          error={errors.password}
+        />
       </form>
+      <Button type="submit" text="Login" className="mt-3" />
     </main>
   );
 };

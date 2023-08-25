@@ -22,6 +22,7 @@ const Input: React.FC<PropsType> = ({
         {...register(label)}
         className="w-full h-12 border border-solid border-borders rounded-lg py-3 pl-12 pr-4"
         placeholder={placeholder}
+        id={label}
       />
       {icon}
       <p className="w-full h-3 flex justify-center items-center">

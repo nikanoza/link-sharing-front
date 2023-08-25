@@ -10,7 +10,9 @@ export default {
         "light-grey": "#FAFAFA",
         "dark-grey": "#333",
         grey: "#737373",
-        borders: "#D9D9D9"
+        borders: "#D9D9D9",
+        electric: "#633CFF",
+        white: "#fff"
       }
     },
   },
