@@ -1,15 +1,19 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { Email, LogoText, Password } from "../../svg";
 import { LoginType } from "../../types";
 import { Button, Input } from "../../components";
 import { Link } from "@tanstack/react-router";
+import { loginSchema } from "../../schemas";
 
 const Login = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<LoginType>();
+  } = useForm<LoginType>({
+    resolver: yupResolver(loginSchema),
+  });
 
   const onSubmit: SubmitHandler<LoginType> = async (data) => {
     console.log(data);
@@ -31,6 +35,7 @@ const Login = () => {
           placeholder="e.g. alex@email.com"
           icon={<Email className="absolute top-4 left-4" />}
           error={errors.email}
+          type="email"
         />
         <label className="text-xs text-dark-grey font-normal mt-3">
           Password
@@ -38,6 +43,7 @@ const Login = () => {
         <Input
           register={register}
           label="password"
+          type="password"
           placeholder="Enter your password"
           icon={<Password className="absolute top-4 left-4" />}
           error={errors.password}
