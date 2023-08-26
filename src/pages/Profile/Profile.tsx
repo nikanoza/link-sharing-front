@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { UploadImg } from "../../svg";
 import { ProfileType } from "../../types";
 import { profileSchema } from "../../schemas";
+import { useRef } from "react";
 
 const Profile = () => {
   const {
@@ -14,6 +15,8 @@ const Profile = () => {
   } = useForm<ProfileType>({
     resolver: yupResolver(profileSchema),
   });
+
+  const imageRef = useRef<HTMLInputElement | null>(null);
 
   const onSubmit: SubmitHandler<ProfileType> = async (data) => {
     console.log(data);
@@ -32,7 +35,11 @@ const Profile = () => {
               <h3 className="text-grey text-base font-normal">
                 Profile picture
               </h3>
-              <button className="border-none flex flex-col items-center justify-center gap-1 py-14 px-10 bg-light-purple rounded-lg mt-4">
+              <input type="file" hidden ref={imageRef} />
+              <button
+                className="border-none flex flex-col items-center justify-center gap-1 py-14 px-10 bg-light-purple rounded-lg mt-4"
+                onClick={() => imageRef.current?.click()}
+              >
                 <UploadImg />
                 <h3 className="text-electric text-base font-normal">
                   + Upload Image
