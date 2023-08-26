@@ -13,7 +13,8 @@ export default {
         borders: "#D9D9D9",
         electric: "#633CFF",
         white: "#fff",
-        error: "#FF3939"
+        error: "#FF3939",
+        "light-purple": "#EFEBFF"
       }
     },
   },
