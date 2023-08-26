@@ -12,7 +12,8 @@ export default {
         grey: "#737373",
         borders: "#D9D9D9",
         electric: "#633CFF",
-        white: "#fff"
+        white: "#fff",
+        error: "#FF3939"
       }
     },
   },

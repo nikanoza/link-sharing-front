@@ -25,7 +25,7 @@ const Input: React.FC<PropsType> = ({
         id={label}
       />
       {icon}
-      <p className="w-full h-3 flex justify-center items-center">
+      <p className="w-full h-3 flex text-xs text-error font-semibold items-center">
         {error && error.message}
       </p>
     </div>

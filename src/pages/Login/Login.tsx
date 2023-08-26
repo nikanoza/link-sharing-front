@@ -1,15 +1,19 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { Email, LogoText, Password } from "../../svg";
 import { LoginType } from "../../types";
 import { Button, Input } from "../../components";
 import { Link } from "@tanstack/react-router";
+import { loginSchema } from "../../schemas";
 
 const Login = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<LoginType>();
+  } = useForm<LoginType>({
+    resolver: yupResolver(loginSchema),
+  });
 
   const onSubmit: SubmitHandler<LoginType> = async (data) => {
     console.log(data);
