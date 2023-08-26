@@ -1,21 +1,31 @@
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { RegisterType } from "../../types";
+import { registerSchema } from "../../schemas";
+import { Email, LogoText, Password } from "../../svg";
+import { Button, Input } from "../../components";
+import { Link } from "@tanstack/react-router";
+
 const Register = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<LoginType>({
-    resolver: yupResolver(loginSchema),
+  } = useForm<RegisterType>({
+    resolver: yupResolver(registerSchema),
   });
 
-  const onSubmit: SubmitHandler<LoginType> = async (data) => {
+  const onSubmit: SubmitHandler<RegisterType> = async (data) => {
     console.log(data);
   };
   return (
     <main className="w-full h-full bg-light-grey p-8 flex flex-col">
       <LogoText />
-      <h1 className="text-2xl text-dark-grey font-bold mt-[72px]">Login</h1>
+      <h1 className="text-2xl text-dark-grey font-bold mt-[72px]">
+        Create account
+      </h1>
       <h3 className="text-grey text-base font-normal mt-2">
-        Add your details below to get back into the app
+        Let’s get you started sharing your links!
       </h3>
       <form className="w-full mt-10" onSubmit={handleSubmit(onSubmit)}>
         <label className="text-xs text-dark-grey font-normal">
@@ -29,25 +39,35 @@ const Register = () => {
           error={errors.email}
         />
         <label className="text-xs text-dark-grey font-normal mt-3">
-          Password
+          Create Password
         </label>
         <Input
           register={register}
           label="password"
-          placeholder="Enter your password"
+          placeholder="At least .8 characters"
           icon={<Password className="absolute top-4 left-4" />}
           error={errors.password}
         />
-        <Button type="submit" text="Login" className="mt-3" />
+        <label className="text-xs text-dark-grey font-normal mt-3">
+          Confirm password
+        </label>
+        <Input
+          register={register}
+          label="confirmPassword"
+          placeholder="At least .8 characters"
+          icon={<Password className="absolute top-4 left-4" />}
+          error={errors.confirmPassword}
+        />
+        <Button type="submit" text="Create new account" className="mt-3" />
       </form>
       <h3 className="text-center text-base text-grey font-normal mt-6">
-        Don’t have an account?
+        Already have an account?
       </h3>
       <Link
-        to="/register"
+        to="/login"
         className="text-center text-base text-electric font-normal mx-auto"
       >
-        Create account
+        Login
       </Link>
     </main>
   );
