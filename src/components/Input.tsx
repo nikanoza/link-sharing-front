@@ -7,6 +7,7 @@ type PropsType = {
   placeholder: string;
   icon: React.ReactElement;
   error: FieldError | undefined;
+  type: string;
 };
 
 const Input: React.FC<PropsType> = ({
@@ -15,11 +16,13 @@ const Input: React.FC<PropsType> = ({
   placeholder,
   icon,
   error,
+  type,
 }) => {
   return (
     <div className="w-full relative">
       <input
         {...register(label)}
+        type={type}
         className="w-full h-12 border border-solid border-borders rounded-lg py-3 pl-12 pr-4"
         placeholder={placeholder}
         id={label}

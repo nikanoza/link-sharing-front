@@ -35,6 +35,7 @@ const Login = () => {
           placeholder="e.g. alex@email.com"
           icon={<Email className="absolute top-4 left-4" />}
           error={errors.email}
+          type="email"
         />
         <label className="text-xs text-dark-grey font-normal mt-3">
           Password
@@ -42,6 +43,7 @@ const Login = () => {
         <Input
           register={register}
           label="password"
+          type="password"
           placeholder="Enter your password"
           icon={<Password className="absolute top-4 left-4" />}
           error={errors.password}

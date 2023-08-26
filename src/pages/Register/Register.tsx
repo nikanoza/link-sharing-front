@@ -34,6 +34,7 @@ const Register = () => {
         <Input
           register={register}
           label="email"
+          type="email"
           placeholder="e.g. alex@email.com"
           icon={<Email className="absolute top-4 left-4" />}
           error={errors.email}
@@ -44,6 +45,7 @@ const Register = () => {
         <Input
           register={register}
           label="password"
+          type="password"
           placeholder="At least .8 characters"
           icon={<Password className="absolute top-4 left-4" />}
           error={errors.password}
@@ -54,6 +56,7 @@ const Register = () => {
         <Input
           register={register}
           label="confirmPassword"
+          type="password"
           placeholder="At least .8 characters"
           icon={<Password className="absolute top-4 left-4" />}
           error={errors.confirmPassword}
