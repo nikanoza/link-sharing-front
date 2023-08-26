@@ -6,3 +6,4 @@ export { default as LinkIcon } from "./LinkIcon";
 export { default as ProfileIcon } from "./ProfileIcon";
 export { default as PreviewIcon } from "./PreviewIcon";
 export { default as Empty } from "./Empty";
+export { default as UploadImg } from "./UploadImg";

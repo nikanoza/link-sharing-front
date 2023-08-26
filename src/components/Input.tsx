@@ -5,9 +5,9 @@ type PropsType = {
   register: UseFormRegister<any>;
   label: string;
   placeholder: string;
-  icon: React.ReactElement;
   error: FieldError | undefined;
   type: string;
+  icon?: React.ReactElement;
 };
 
 const Input: React.FC<PropsType> = ({
@@ -23,7 +23,9 @@ const Input: React.FC<PropsType> = ({
       <input
         {...register(label)}
         type={type}
-        className="w-full h-12 border border-solid border-borders rounded-lg py-3 pl-12 pr-4"
+        className={`w-full h-12 border border-solid border-borders rounded-lg py-3 pr-4 ${
+          icon ? "pl-12" : "pl-4"
+        }`}
         placeholder={placeholder}
         id={label}
       />

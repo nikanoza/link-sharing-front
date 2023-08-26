@@ -8,3 +8,9 @@ export type RegisterType = {
   password: string;
   confirmPassword: string;
 };
+
+export type ProfileType = {
+  firstName: string;
+  lastName: string;
+  email: string;
+};
